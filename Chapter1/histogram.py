@@ -7,10 +7,12 @@ Created on Sun Sep 30 16:52:34 2018
 """
 
 from PIL import Image
-from matplotlib.pylab import *
+from matplotlib import pyplot as plt 
+import numpy as np
 
-pil_im_grayArray = array(Image.open('empire.jpg').convert('L'))
+pil_im_grayArray = np.array(Image.open('images/empire.jpg').convert('L'))
+histArray = np.histogram(pil_im_grayArray.flatten(),20)
 
-figure()
-histArray = hist(pil_im_grayArray.flatten(),20)
-show()
+plt.hist(pil_im_grayArray.flatten(), 20) 
+plt.title("histogram") 
+plt.show()

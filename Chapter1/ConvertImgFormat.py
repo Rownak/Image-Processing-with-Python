@@ -13,7 +13,7 @@ def get_imlist(path):
     return [os.path.join(path,f) for f in os.listdir(path) if f.endswith('.jpg')]
 
 
-path ="Images"
+path ="images"
 filelist = get_imlist(path)
 for infile in filelist:
     
